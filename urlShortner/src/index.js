@@ -6,7 +6,7 @@ const PORT = 8000
 ;( async function (){
    try {
     const responce = mongoose.connect("mongodb+srv://chand:mypass123@cluster0.frdz08r.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
-    if(responce) console.log("datbase connects on " + mongoose.connection)
+    if(responce) console.log("datbase connects on " + (await responce).connection.host)
    } catch (error) {
      console.log(error)
    }
